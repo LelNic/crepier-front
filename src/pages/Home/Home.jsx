@@ -7,12 +7,12 @@ const Home = () => {
   return (
     <>
       <section className="Home">
-        <h1 className="homeTitle">Cynthia Diefenbronn</h1>
-        <span className="job">Thérapeute en Nutrition Santé et Naturopathie</span>
+        <h1 className="homeTitle">Manau Manau</h1>
+        <span className="job">Site d'outilllage</span>
         <CgMouse class="scroll" />
       </section>
       {/* <section>{articles.map((a) => a)}</section> */}
-      <section className="items">
+      <section className="">
         <h2>Mes Spécialités</h2>
         <HomeItem title="Naturopathie" slug="naturopathie" text="blablabla" icon={<GiFallingLeaf />} />
         <HomeItem title="MicroNutrition" slug="micronutrition" text="blablabla" icon={<GiForkKnifeSpoon />} />
