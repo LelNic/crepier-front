@@ -1,14 +1,16 @@
 import React from "react";
-import "./Header.css";
 import disco from "../../assets/images/discoCrepeLogo.png";
+import { HiDotsHorizontal } from "react-icons/hi";
+import "./Header.css";
 
 const Header = () => {
-  return (
-    <header>
-      <img src={disco} alt="Logo de disco crêpe" />
-      <div>Disco Crêpe</div>
-    </header>
-  );
+    return (
+        <header className="Header">
+            <img src={disco} alt="Logo de disco crêpe" className="logo" />
+            <input type="text" placeholder="Rechercher" className="search" />
+            <HiDotsHorizontal className="settings" />
+        </header>
+    );
 };
 
 export default Header;
