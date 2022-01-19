@@ -1,0 +1,20 @@
+.Services-page{
+  margin-top: 7vh;
+  text-align: center;
+}
+
+.div-servicecard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:  wrap;
+  margin: auto;
+}
+
+/* @media screen and (max-width: px) {
+  .Services-page{
+    display: flex;
+    flex-direction: row;
+  }
+} */
+

@@ -1,0 +1,11 @@
+.serviceDescription{
+  min-height: 88vh;
+
+} 
+
+.infos-serviceDescription{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}

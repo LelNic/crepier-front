@@ -1,0 +1,9 @@
+.Social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Social li {
+  color: var(--secondary);
+}
