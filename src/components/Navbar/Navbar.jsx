@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { FaOpencart } from "react-icons/fa";
-import logo from "../../assets/images/LogoMini.png";
+import logo from "../../assets/images/discoboule.png";
 import "./Navbar.css";
 
 const Navbar = () => {
