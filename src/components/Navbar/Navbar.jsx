@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
-import { FaOpencart } from "react-icons/fa";
+import  FaOpencart from "../../assets/images/carticon.png";
 import logo from "../../assets/images/LogoMini.png";
 import "./Navbar.css";
 
