@@ -1,4 +1,3 @@
-// eslint-disable-next-line arrow-body-style
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
