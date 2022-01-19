@@ -1,0 +1,33 @@
+.Header {
+    background: var(--secondary);
+    position: relative;
+    height: 12vh;
+}
+
+.logo {
+    height: 4vh;
+    position: absolute;
+    top: 1vh;
+    left: 2vw;
+}
+
+.search {
+    background: white !important;
+    width: 70vw !important;
+    height: 5vh !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0) !important;
+    padding: 2vw;
+    border-radius: 25px;
+    position: absolute;
+    left: 10vw;
+    top: 5.5vh;
+    padding-left: 5vw;
+}
+
+.settings {
+    color: var(--body);
+    font-size: 7vh;
+    position: absolute;
+    right: 5vw;
+    top: 0.5vh;
+}

@@ -1,0 +1,12 @@
+.item {
+    border: 1px solid var(--third);
+    border-radius: 5px;
+    padding: 2vw;
+    height: 30vh;
+    width: 35vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
