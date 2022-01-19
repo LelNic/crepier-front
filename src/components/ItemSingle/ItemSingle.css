@@ -1,9 +1,9 @@
-.serviceDescription{
+.ItemSingle{
   min-height: 88vh;
 
 } 
 
-.infos-serviceDescription{
+.infos-itemSingle{
   display: flex;
   flex-direction: column;
   align-items: center;
