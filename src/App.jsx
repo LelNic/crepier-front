@@ -11,8 +11,9 @@ import axios from "axios";
 import Search from "./pages/Search/Search";
 import Login from "./pages/Login/Login";
 import ItemSingle from "./pages/ItemSingle/ItemSingle";
-import "./App.css";
 import Profile from "./pages/Profile/Profile";
+import Register from "./pages/Register/Register";
+import "./App.css";
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -50,6 +51,7 @@ const App = () => {
                         <Route path="/search/:id" element={<ItemSingle />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/single/:id" element={<ItemSingle />} />
+                        <Route path="/register" element={<Register />} />
 
                         <Route path="user" element={<ProtectedRoute />}>
                             <Route path="profile" element={<Profile />} />
