@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Wrapper from "./components/Wrapper/Wrapper";
 import { AuthContext } from "./contexts/AuthContext.js";
 import { UserContext } from "./contexts/UserContext.js";
+import { CartContext } from "./contexts/CartContext.js";
 import { ProtectedRoute } from "./protected/ProtectedRoute.js";
 import axios from "axios";
 import Search from "./pages/Search/Search";
@@ -14,10 +15,17 @@ import ItemSingle from "./pages/ItemSingle/ItemSingle";
 import Profile from "./pages/Profile/Profile";
 import Register from "./pages/Register/Register";
 import "./App.css";
+import Cart from "./pages/Cart/Cart";
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState({});
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        const cartStore = JSON.parse(localStorage.getItem("cart"));
+        setCart(cartStore);
+    }, []);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -43,23 +51,26 @@ const App = () => {
     return (
         <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
             <UserContext.Provider value={{ user, setUser }}>
-                <Header />
-                <main>
-                    <Routes>
-                        <Route exact path="/" element={<Home />} />
-                        <Route path="/search" element={<Search />} />
-                        <Route path="/search/:id" element={<ItemSingle />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/single/:id" element={<ItemSingle />} />
-                        <Route path="/register" element={<Register />} />
+                <CartContext.Provider value={{ cart, setCart }}>
+                    <Header />
+                    <main>
+                        <Routes>
+                            <Route exact path="/" element={<Home />} />
+                            <Route path="/search" element={<Search />} />
+                            <Route path="/search/:id" element={<ItemSingle />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/single/:id" element={<ItemSingle />} />
+                            <Route path="/register" element={<Register />} />
+                            <Route path="/cart" element={<Cart />} />
 
-                        <Route path="user" element={<ProtectedRoute />}>
-                            <Route path="profile" element={<Profile />} />
-                        </Route>
-                    </Routes>
-                </main>
-                <Navbar />
-                <Wrapper />
+                            <Route path="user" element={<ProtectedRoute />}>
+                                <Route path="profile" element={<Profile />} />
+                            </Route>
+                        </Routes>
+                    </main>
+                    <Navbar />
+                    <Wrapper />
+                </CartContext.Provider>
             </UserContext.Provider>
         </AuthContext.Provider>
     );
