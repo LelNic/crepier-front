@@ -5,11 +5,7 @@ const Home = () => {
     return (
         <section className="Home">
             <h1>Disco Crêpe</h1>
-            <h2>Site d'outilllage</h2>
-            <ul>
-                <Item name="Crêpe Suisse" />
-                <Item name="Crêpe Belge" />
-            </ul>
+            <h2>La crêpe Festive</h2>
         </section>
     );
 };

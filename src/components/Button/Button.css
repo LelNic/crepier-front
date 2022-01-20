@@ -1,11 +1,14 @@
-.Button{
-  width: 20vh;
-  height: 4vh;
-  background: var(--third);
-  color: var(--white);
-  font-weight: 700;
-  border: none;
-  border-radius: 3px;
-  text-align: center;
-  box-shadow: 2px 2px 3px 1px #6161618a;
+.Button {
+    width: 20vh;
+    height: 4vh;
+    background: var(--secondary);
+    color: var(--body);
+    font-family: var(--font);
+    font-size: 3vh;
+    line-height: 1;
+    font-weight: 400;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 2px 2px 3px 1px #6161618a;
 }

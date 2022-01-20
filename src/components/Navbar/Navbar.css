@@ -53,15 +53,17 @@
 .cart {
     font-size: 10vh;
 }
-img.logo{
-        width: 210px;
+img.logo {
+    width: 210px;
 }
-.nav-icon-cart{
+.nav-icon-cart {
     width: 3em;
 }
-input{
-margin-left: -1em;
-}
-.settings{
+
+.settings {
     margin-top: 33px;
+}
+
+.nav-icon.red {
+    color: var(--alert);
 }

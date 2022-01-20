@@ -1,14 +1,38 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import disco from "../../assets/images/discoCrepe.png";
-import { HiDotsHorizontal } from "react-icons/hi";
 import "./Header.css";
 
 const Header = () => {
+    const [search, setSearch] = useState();
+    const [crepes, setCrepes] = useState();
+
+    useEffect(() => {
+        axios
+            .post("http://localhost:5000/crepes/search", {
+                name: search,
+            })
+            .then(({ data }) => setCrepes(data.slice(0, 5)));
+    }, [search]);
+
+    const handleReset = () => {
+        setCrepes([]);
+    };
+
     return (
         <header className="Header">
             <img src={disco} alt="Logo de disco crêpe" className="logo" />
-            <input type="text" placeholder="Rechercher" className="search" />
-            <HiDotsHorizontal className="settings" />
+            <input type="text" placeholder="Rechercher" className="search" onChange={(e) => setSearch(e.target.value)} />
+            <div className="suggestions">
+                {crepes
+                    ? crepes.map((c) => (
+                          <Link to={`/single/${c.id}`} onClick={handleReset}>
+                              <p className="crepe-item">{c.name}</p>
+                          </Link>
+                      ))
+                    : ""}
+            </div>
         </header>
     );
 };
