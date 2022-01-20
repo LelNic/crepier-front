@@ -1,22 +1,26 @@
 import { Link } from "react-router-dom";
 import strLimit from "../../services/services.js";
 import Button from "../Button/Button.jsx";
+import { FaOpencart } from "react-icons/fa";
 import "./Item.css";
 
 const Item = ({ item }) => {
-  return (
-    <div className="ServiceCard">
-      {/* <img className="img-service-card" src={item?.image} alt={item?.name} />
-      <h2 className="h2-service-card">{item.name}</h2>
-      <p className="description">
-        {strLimit(item.description)}
-        <Link to={`/services/${item.id}`}>
-          <span className="link-service-card">Afficher plus...</span>
-        </Link>
-      </p>
-      <p className="price">{item.price}</p>
-      <Button text="Voir Plus" /> */}
-    </div>
-  );
+    return (
+        <div className="item">
+            <img src={`images/${item.image}`} alt={item?.name} className="image" />
+            <div className="infos">
+                <h2>{item.name}</h2>
+                <p>
+                    {strLimit(item.description)}
+                    <Link to={`/services/${item.id}`}></Link>
+                </p>
+                <p className="price">{item.price} €</p>
+                <div className="button-container">
+                    <Button text="Voir Plus" />
+                    <FaOpencart className="addToCart" />
+                </div>
+            </div>
+        </div>
+    );
 };
 export default Item;

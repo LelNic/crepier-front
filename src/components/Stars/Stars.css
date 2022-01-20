@@ -1,7 +1,7 @@
-.Search {
+.Stars {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2vh;
+    color: var(--third);
+    font-size: 3vh;
 }

@@ -134,8 +134,9 @@ h1 {
 
 h2 {
     font-family: var(--navFont);
-    font-size: 5vh;
-    color: var(--secondary);
+    font-size: 3.5vh;
+    text-transform: uppercase;
+    color: var(--third);
 }
 
 p {
