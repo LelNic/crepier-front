@@ -1,25 +1,30 @@
+// import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./ItemSingle.css";
+import Button from "./../Button/Button";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Hero from "../Hero/Hero";
-import "./ItemSingle.css";
 
 const ItemSingle = () => {
-  const [dataCrepe, setDataCrepe] = useState([]);
-  const { id } = useParams();
+  const [item, setItem] = useState([]);
+  const [id] = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/services/${id}`).then(({ data }) => setDataCrepe(data));
+    axios.get(`http://localhost:5000/crepes/${id}`).then(({ data }) => setItem(data));
   }, [id]);
 
   return (
-    <div className="itemSingle" id="itemSingle">
-      <Hero className="serviceHero" title={dataCrepe.name} image={dataCrepe.image} />
-      <div className="infos-itemSingle">
-        <p>Durée de la prestation: {dataCrepe.time}</p>
-        <p>Prix: {dataCrepe.price}</p>
-        <p className="description">{dataCrepe.description}</p>
-      </div>
+    <div>
+      <li className="item">
+        <h2>{item.name}</h2>
+        <h3>{item.image}</h3>
+        <h3>{item.shortDescribe}</h3>
+        <h3>{item.price}</h3>
+      </li>
+      {/* <Link to={`/services/${data.id}`}>
+          <span className="link-service-card">Afficher plus...</span>
+        </Link> */}
+      <Button text="Commander la crepe" />
     </div>
   );
 };
