@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
-import { ImCross } from "react-icons/im";
+import { ImCross, ImUserPlus } from "react-icons/im";
 import FaOpencart from "../../assets/images/carticon.png";
-import logo from "../../assets/images/discoboule.png";
+import logo from "../../assets/images/discoBoule.png";
 import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext.js";
@@ -33,12 +33,20 @@ const Navbar = () => {
                         <ImCross className="nav-icon red" onClick={logout} />
                     </>
                 ) : (
-                    <Link to="/login">
-                        <li className="menu-container">
-                            <BsPersonCircle className="nav-icon" />
-                            <span>Login</span>
-                        </li>
-                    </Link>
+                    <>
+                        <Link to="/login">
+                            <li className="menu-container">
+                                <BsPersonCircle className="nav-icon" />
+                                <span>Login</span>
+                            </li>
+                        </Link>
+                        <Link to="/register">
+                            <li className="menu-container">
+                                <ImUserPlus className="nav-icon" />
+                                <span>Inscription</span>
+                            </li>
+                        </Link>
+                    </>
                 )}
                 <Link to="/" className={`mobile`}>
                     <li>
