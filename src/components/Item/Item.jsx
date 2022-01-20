@@ -1,32 +1,22 @@
-// import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import "./Item.css";
-import Button from "./../Button/Button";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import { Link } from 'react-router-dom'
+import { strLimit } from '../../services/services.js'
+import Button from '../Button/Button.jsx'
+import './Item.css'
 
-const Item = () => {
-  const [item, setItem] = useState([]);
-  const [id] = useParams();
-
-  useEffect(() => {
-    axios.get(`http://localhost:5000/crepes/${id}`).then(({ data }) => setItem(data));
-  }, [id]);
-
+const Item = ({ item }) => {
   return (
-    <div>
-      <li className="item">
-        <h2>{item.name}</h2>
-        <h3>{item.image}</h3>
-        <h3>{item.shortDescribe}</h3>
-        <h3>{item.price}</h3>
-      </li>
-      {/* <Link to={`/services/${data.id}`}>
+    <div className="ServiceCard">
+      <img className="img-service-card" src={item.image} alt={item.name} />
+      <h2 className="h2-service-card">{item.name}</h2>
+      <p className="description">
+        {strLimit(item.description)}
+        <Link to={`/services/${item.id}`}>
           <span className="link-service-card">Afficher plus...</span>
-        </Link> */}
-      <Button text="Commander la crepe" />
+        </Link>
+      </p>
+      <p className="price">{item.price}</p>
+      <Button text="Voir Plus" />
     </div>
-  );
-};
-
-export default Item;
+  )
+}
+export default Item

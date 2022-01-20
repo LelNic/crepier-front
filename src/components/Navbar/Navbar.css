@@ -1,5 +1,5 @@
 .Navbar {
-    height: 12vh;
+    height: 6em;
     width: 100vw;
     padding: 2vh;
     position: fixed;
@@ -35,7 +35,7 @@
 }
 
 .logoHome {
-    height: 9vh;
+    height: 2em;
 }
 
 .nav-icon {
@@ -43,6 +43,7 @@
 }
 
 .menu-container {
+    height: 3em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,4 +52,16 @@
 
 .cart {
     font-size: 10vh;
+}
+img.logo{
+        width: 210px;
+}
+.nav-icon-cart{
+    width: 3em;
+}
+input{
+margin-left: -1em;
+}
+.settings{
+    margin-top: 33px;
 }
