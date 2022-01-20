@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./ItemSingle.css";
-import Button from "./../Button/Button";
+import Button from "../../components/Button/Button";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
