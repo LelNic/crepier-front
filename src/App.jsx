@@ -10,7 +10,7 @@ import { AuthContext } from "./contexts/AuthContext.js";
 import { UserContext } from "./contexts/UserContext.js";
 import { ProtectedRoute } from "./protected/ProtectedRoute.js";
 import axios from "axios";
-import ServiceDescription from "./components/ServiceDescription/ServiceDescription";
+import ServiceDescription from "./components/ItemSingle/ItemSingle";
 import "./App.css";
 
 const App = () => {
