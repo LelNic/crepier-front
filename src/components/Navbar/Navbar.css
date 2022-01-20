@@ -1,72 +1,72 @@
 .Navbar {
-    height: 6em;
-    width: 100vw;
-    padding: 2vh;
-    position: fixed;
-    bottom: 0;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 1s ease-out;
-    background-color: var(--secondary);
-    z-index: 3;
+  height: 12vh;
+  width: 100vw;
+  padding: 2vh;
+  position: fixed;
+  bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease-out;
+  background-color: var(--secondary);
+  z-index: 3;
 }
 
 .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .menu a li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--titleFont);
-    font-style: italic;
-    color: var(--body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--titleFont);
+  font-style: italic;
+  color: var(--body);
 }
 
 .menu a li span {
-    font-size: 2vh;
+  font-size: 2vh;
 }
 
 .nav-text {
-    display: none;
+  display: none;
 }
 
 .logoHome {
-    height: 2em;
+  height: 2em;
 }
 
 .nav-icon {
-    font-size: 6vh;
+  font-size: 6vh;
 }
 
 .menu-container {
-    height: 3em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cart {
-    font-size: 10vh;
+  font-size: 10vh;
 }
 img.logo {
-    width: 210px;
+  width: 210px;
 }
 .nav-icon-cart {
-    width: 3em;
+  width: 3em;
 }
 
 .settings {
-    margin-top: 33px;
+  margin-top: 33px;
 }
 
 .nav-icon.red {
-    color: var(--alert);
+  color: var(--alert);
 }

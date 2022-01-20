@@ -3,18 +3,30 @@ const strLimit = (string) => {
 };
 
 const addToCart = (id, price) => {
-  let products = [];
-  if (localStorage.getItem("products")) {
-    products = JSON.parse(localStorage.getItem("products"));
+  let cart = [];
+  if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart.some((p) => p.id === id)) {
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id === id) {
+          cart[i].qty += 1;
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+      }
+    } else {
+      cart.push({ id: id, price: price, qty: 1 });
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  } else {
+    cart.push({ id: id, price: price, qty: 1 });
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
-  products.push({ productsId: id, price: price });
-  localStorage.setItem("products", JSON.stringify(products));
 };
 
 const removeFromCart = (id) => {
-  let storageProducts = JSON.parse(localStorage.getItem("products"));
-  let products = storageProducts.filter((product) => product.id !== id);
-  localStorage.setItem("products", JSON.stringify(products));
+  let storageCart = JSON.parse(localStorage.getItem("cart"));
+  let cart = storageCart.filter((product) => product.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 export default { strLimit, addToCart, removeFromCart };
