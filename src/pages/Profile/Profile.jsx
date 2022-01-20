@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
@@ -28,6 +29,8 @@ const Profile = () => {
 
             <p>{userInfos?.phone}</p>
             <p>{moment(userInfos?.birthdate).format("l")}</p>
+
+            <Link to="/user/adresses">Mes Adresses</Link>
         </div>
     );
 };
