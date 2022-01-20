@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import  FaOpencart from "../../assets/images/carticon.png";
-import logo from "../../assets/images/LogoMini.png";
+import logo from "../../assets/images/discoboule.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/" className={`mobile`}>
                     <li>
-                        <FaOpencart className="nav-icon cart" />
+                        <img src={FaOpencart} alt="picturecartpng"className="nav-icon-cart" />
                     </li>
                 </Link>
             </ul>

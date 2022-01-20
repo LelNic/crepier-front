@@ -1,5 +1,5 @@
 import React from "react";
-import disco from "../../assets/images/discoCrepeLogo.png";
+import disco from "../../assets/images/discoCrepe.png";
 import { HiDotsHorizontal } from "react-icons/hi";
 import "./Header.css";
 
