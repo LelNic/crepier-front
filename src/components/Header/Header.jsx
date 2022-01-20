@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import disco from "../../assets/images/discoCrepe.png";
 import "./Header.css";
 
 const Header = () => {
@@ -22,7 +21,6 @@ const Header = () => {
 
     return (
         <header className="Header">
-            <img src={disco} alt="Logo de disco crêpe" className="logo" />
             <input type="text" placeholder="Rechercher" className="search" onChange={(e) => setSearch(e.target.value)} />
             <div className="suggestions">
                 {crepes
