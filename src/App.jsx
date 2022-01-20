@@ -15,17 +15,21 @@ import ItemSingle from "./pages/ItemSingle/ItemSingle";
 import Profile from "./pages/Profile/Profile";
 import Register from "./pages/Register/Register";
 import "./App.css";
+import Cart from "./pages/Cart/Cart";
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState({});
   const [cartQuantity, setCartQuantity] = useState(0);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [user, setUser] = useState({});
+    const [cart, setCart] = useState([]);
+
 
   useEffect(() => {
        const cart = JSON.parse(localStorage.getItem("cart"));
        const qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
-      setCartQuantity(qty);
+      setCart(qty);
      }, []);
+
 
   useEffect(() => {
     const token = localStorage.getItem("token");

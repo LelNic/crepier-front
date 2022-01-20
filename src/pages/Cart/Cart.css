@@ -1,0 +1,65 @@
+.Cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+}
+
+.Cart ul li {
+    font-size: 3vh;
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--third);
+    font-family: var(--subTitleFont);
+}
+
+.Cart ul li:nth-child(even) {
+    background-color: #eee;
+}
+
+.Cart .cart-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cart .total {
+    font-size: 7vh;
+    font-family: var(--titleFont);
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.Cart .button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
+.Cart .update-qty {
+    width: 10vw;
+    text-align: center;
+    font-size: 3vh;
+    color: var(--third);
+    font-weight: bold;
+}
+
+.Cart .plusOne {
+    background: var(--valid);
+    color: var(--body);
+    font-size: 4vh;
+    padding: 1vh;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 5px;
+}
+
+.Cart .trash {
+    color: var(--alert);
+}
