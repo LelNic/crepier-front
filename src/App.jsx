@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Wrapper from "./components/Wrapper/Wrapper";
 import { AuthContext } from "./contexts/AuthContext.js";
 import { UserContext } from "./contexts/UserContext.js";
+import { CartContext } from "./contexts/CartContext.js";
 import { ProtectedRoute } from "./protected/ProtectedRoute.js";
 import axios from "axios";
 import Search from "./pages/Search/Search";
@@ -16,53 +17,62 @@ import Register from "./pages/Register/Register";
 import "./App.css";
 
 const App = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [user, setUser] = useState({});
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState({});
+  const [cartQuantity, setCartQuantity] = useState(0);
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token) {
-            axios
-                .get("http://localhost:5000/security/user-is-auth", {
-                    headers: {
-                        "x-access-token": token,
-                    },
-                })
-                .then(({ data }) => {
-                    if (data.auth) {
-                        setIsAuthenticated(true);
-                        setUser(JSON.parse(localStorage.getItem("user")));
-                    }
-                })
-                .catch(() => {
-                    localStorage.removeItem("token");
-                });
-        }
-    }, []);
+  useEffect(() => {
+       const cart = JSON.parse(localStorage.getItem("cart"));
+       const qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
+      setCartQuantity(qty);
+     }, []);
 
-    return (
-        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-            <UserContext.Provider value={{ user, setUser }}>
-                <Header />
-                <main>
-                    <Routes>
-                        <Route exact path="/" element={<Home />} />
-                        <Route path="/search" element={<Search />} />
-                        <Route path="/search/:id" element={<ItemSingle />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/single/:id" element={<ItemSingle />} />
-                        <Route path="/register" element={<Register />} />
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      axios
+        .get("http://localhost:5000/security/user-is-auth", {
+          headers: {
+            "x-access-token": token,
+          },
+        })
+        .then(({ data }) => {
+          if (data.auth) {
+            setIsAuthenticated(true);
+            setUser(JSON.parse(localStorage.getItem("user")));
+          }
+        })
+        .catch(() => {
+          localStorage.removeItem("token");
+        });
+    }
+  }, []);
 
-                        <Route path="user" element={<ProtectedRoute />}>
-                            <Route path="profile" element={<Profile />} />
-                        </Route>
-                    </Routes>
-                </main>
-                <Navbar />
-                <Wrapper />
-            </UserContext.Provider>
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+      <UserContext.Provider value={{ user, setUser }}>
+        <CartContext.Provider value={{ cartQuantity, setCartQuantity }}>
+          <Header />
+          <main>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/search/:id" element={<ItemSingle />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/single/:id" element={<ItemSingle />} />
+              <Route path="/register" element={<Register />} />
+
+              <Route path="user" element={<ProtectedRoute />}>
+                <Route path="profile" element={<Profile />} />
+              </Route>
+            </Routes>
+          </main>
+          <Navbar />
+          <Wrapper />
+        </CartContext.Provider>
+      </UserContext.Provider>
+    </AuthContext.Provider>
+  );
 };
 
 export default App;

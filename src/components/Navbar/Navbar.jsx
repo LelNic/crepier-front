@@ -7,10 +7,12 @@ import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext.js";
 import { UserContext } from "../../contexts/UserContext.js";
+import { CartContext } from "../../contexts/CartContext.js";
 
 const Navbar = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const { user, setUser } = useContext(UserContext);
+  const { cartQuantity } = useContext(CartContext);
 
   const logout = () => {
     localStorage.clear();
@@ -56,6 +58,7 @@ const Navbar = () => {
         <BsCardChecklist className="nav-icon" />
         <Link to="/" className={`mobile`}>
           <li>
+            <span>{cartQuantity}</span>
             <img src={FaOpencart} alt="picturecartpng" className="nav-icon-cart" />
           </li>
         </Link>
