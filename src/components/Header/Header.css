@@ -1,38 +1,20 @@
 .Header {
-  background: var(--secondary);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 15vh;
-}
-
-.logo {
-  height: 4vh;
+    background: var(--secondary);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 15vh;
 }
 
 .search {
-  background: white !important;
-  width: 80vw !important;
-  height: 5vh !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0) !important;
-  padding: 2vw;
-  border-radius: 25px;
-  padding-left: 5vw;
-  margin-bottom: 0 !important;
-}
-
-.crepe-item {
-  padding: 1vh;
-  color: var(--body);
-  font-size: 4vh;
-  width: 100vw;
-  text-align: center;
-}
-
-.crepe-item:nth-child(even) {
-  background: var(--body);
-  color: var(--third);
-  border-bottom: 1px solid var(--secondary);
+    background: white !important;
+    width: 80vw !important;
+    height: 5vh !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0) !important;
+    padding: 2vw;
+    border-radius: 25px;
+    padding-left: 5vw;
+    margin-bottom: 0 !important;
 }
