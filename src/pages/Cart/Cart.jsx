@@ -17,11 +17,11 @@ const Cart = () => {
     const crepesDatas = cart?.map((c) =>
         Object.assign(
             c,
-            crepes.find((y) => y.id === c.id)
+            crepes?.find((y) => y.id === c.id)
         )
     );
 
-    const total = crepesDatas.reduce((acc, prev) => acc + prev.qty * prev.price, 0);
+    const total = crepesDatas?.reduce((acc, prev) => acc + prev.qty * prev.price, 0);
 
     return (
         <div className="Cart">
