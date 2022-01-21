@@ -14,9 +14,8 @@ const Profile = () => {
         axios.get(`http://localhost:5000/users/${user.id}`).then(({ data }) => {
             setUserInfos(data);
         });
-    }, []);
+    }, [user]);
 
-    console.log("plop", userInfos, "id", user.id);
     return (
         <div className="Profile">
             <h2>Profil de : {userInfos?.firstname + " " + userInfos?.lastname}</h2>

@@ -21,8 +21,6 @@ const Cart = () => {
         )
     );
 
-    console.log(cart);
-
     const total = crepesDatas?.reduce((acc, prev) => acc + prev.qty * prev.price, 0);
 
     return (

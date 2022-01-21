@@ -17,12 +17,40 @@ import Register from "./pages/Register/Register";
 import "./App.css";
 import Cart from "./pages/Cart/Cart";
 import Adresses from "./pages/Adresses/Adresses";
+import Services from "./services/services.js";
 
 const App = () => {
     const [cartQuantity, setCartQuantity] = useState(0);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState({});
     const [cart, setCart] = useState([]);
+
+    const addToCart = (id, price) => {
+        let cart = [];
+        if (localStorage.getItem("cart")) {
+            cart = JSON.parse(localStorage.getItem("cart"));
+            if (cart.some((p) => p.id === id)) {
+                for (let i = 0; i < cart.length; i++) {
+                    if (cart[i].id === id) {
+                        cart[i].qty += 1;
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                    }
+                }
+            } else {
+                cart.push({ id: id, price: price, qty: 1 });
+                localStorage.setItem("cart", JSON.stringify(cart));
+            }
+        } else {
+            cart.push({ id: id, price: price, qty: 1 });
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+    };
+
+    const removeFromCart = (id) => {
+        let storageCart = JSON.parse(localStorage.getItem("cart"));
+        let cart = storageCart.filter((product) => product.id !== id);
+        localStorage.setItem("cart", JSON.stringify(cart));
+    };
 
     useEffect(() => {
         const cart = JSON.parse(localStorage.getItem("cart"));
