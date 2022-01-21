@@ -27,7 +27,8 @@ const App = () => {
     useEffect(() => {
         const cart = JSON.parse(localStorage.getItem("cart"));
         const qty = cart?.reduce((acc, curr) => acc + curr.qty, 0);
-        setCart(qty);
+        setCartQuantity(qty);
+        setCart(cart);
     }, []);
 
     useEffect(() => {
@@ -54,7 +55,7 @@ const App = () => {
     return (
         <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
             <UserContext.Provider value={{ user, setUser }}>
-                <CartContext.Provider value={{ cartQuantity, setCartQuantity }}>
+                <CartContext.Provider value={{ cartQuantity, setCartQuantity, cart, setCart }}>
                     <Header />
                     <main>
                         <Routes>
@@ -64,6 +65,7 @@ const App = () => {
                             <Route path="/login" element={<Login />} />
                             <Route path="/single/:id" element={<ItemSingle />} />
                             <Route path="/register" element={<Register />} />
+                            <Route path="/panier" element={<Cart />} />
 
                             <Route path="/user" element={<ProtectedRoute />}>
                                 <Route path="profile" element={<Profile />} />

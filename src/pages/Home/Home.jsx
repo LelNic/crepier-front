@@ -4,11 +4,11 @@ import "./Home.css";
 
 const Home = () => {
     return (
-        <section className="Home">
+        <div className="Home">
             <img src={disco} alt="Logo de disco crêpe" className="logo" />
             <h2>La crêpe Festive</h2>
             <img src={logo} alt="Logo du site Disco Crêpe" className="logoHome" />
-        </section>
+        </div>
     );
 };
 

@@ -21,10 +21,13 @@ const Cart = () => {
         )
     );
 
+    console.log(cart);
+
     const total = crepesDatas?.reduce((acc, prev) => acc + prev.qty * prev.price, 0);
 
     return (
         <div className="Cart">
+            <h1>Panier</h1>
             <ul>
                 {crepesDatas?.map((p) => (
                     <li className="cart-line">

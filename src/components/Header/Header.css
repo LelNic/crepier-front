@@ -18,3 +18,32 @@
     padding-left: 5vw;
     margin-bottom: 0 !important;
 }
+
+.crepe-item {
+    color: var(--body);
+    font-size: 4vh;
+    height: 7vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.crepe-item p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.suggestions {
+    background: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.crepe-item:nth-child(even) p {
+    background-color: rgba(0, 0, 0, 0.1);
+}
