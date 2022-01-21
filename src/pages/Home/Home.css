@@ -1,5 +1,17 @@
-.logo {
-    height: 20vh;
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoHome {
     width: 95%;
     object-fit: contain;
+}
+
+.logo {
+    width: 95%;
+    object-fit: contain;
+    margin-top: 2vh;
 }

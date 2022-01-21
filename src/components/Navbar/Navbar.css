@@ -4,9 +4,7 @@
     padding: 2vh;
     position: fixed;
     bottom: 0;
-    justify-content: space-between;
     align-items: center;
-    transition: all 1s ease-out;
     background-color: var(--secondary);
     z-index: 3;
 }
@@ -33,12 +31,13 @@
     font-size: 2vh;
 }
 
-.nav-text {
-    display: none;
-}
-
 .nav-icon {
     font-size: 6vh;
+}
+
+.nav-icon.red {
+    color: var(--alert);
+    font-size: 4vh;
 }
 
 .menu-container {
@@ -49,18 +48,6 @@
     align-items: center;
 }
 
-.cart {
-    font-size: 10vh;
-}
-
 .nav-icon-cart {
     width: 3em;
-}
-
-.settings {
-    margin-top: 33px;
-}
-
-.nav-icon.red {
-    color: var(--alert);
 }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { BsPersonCircle, BsCardChecklist } from "react-icons/bs";
-import { ImCross, ImUserPlus } from "react-icons/im";
+import { ImCross, ImUserPlus, ImHome3, ImCart } from "react-icons/im";
 import FaOpencart from "../../assets/images/carticon.png";
 import "./Navbar.css";
 import { useContext } from "react";
@@ -31,7 +31,12 @@ const Navbar = () => {
                                 <span>{user.firstname}</span>
                             </li>
                         </Link>
-                        <ImCross className="nav-icon red" onClick={logout} />
+                        <a href="#">
+                            <li className="menu-container">
+                                <ImCross className="nav-icon red" onClick={logout} />
+                                <span>Logout</span>
+                            </li>
+                        </a>
                     </>
                 ) : (
                     <>
@@ -49,13 +54,22 @@ const Navbar = () => {
                         </Link>
                     </>
                 )}
-                <Link to="/" className={`mobile`}>
-                    <li></li>
+                <Link to="/">
+                    <li className="menu-container">
+                        <ImHome3 className="nav-icon" />
+                        <span>Accueil</span>
+                    </li>
                 </Link>
-                <BsCardChecklist className="nav-icon" />
-                <Link to="/cart" className={`mobile`}>
-                    <li>
-                        <img src={FaOpencart} alt="picturecartpng" className="nav-icon-cart" />
+                <Link to="/">
+                    <li className="menu-container">
+                        <BsCardChecklist className="nav-icon" />
+                        <span>Catégories</span>
+                    </li>
+                </Link>
+                <Link to="/panier">
+                    <li className="menu-container">
+                        <ImCart className="nav-icon" />
+                        <span>Panier</span>
                     </li>
                 </Link>
             </ul>

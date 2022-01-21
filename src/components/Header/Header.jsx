@@ -20,18 +20,20 @@ const Header = () => {
     };
 
     return (
-        <header className="Header">
-            <input type="text" placeholder="Rechercher" className="search" onChange={(e) => setSearch(e.target.value)} />
+        <>
+            <header className="Header">
+                <input type="text" placeholder="Rechercher" className="search" onChange={(e) => setSearch(e.target.value)} />
+            </header>
             <div className="suggestions">
                 {crepes
                     ? crepes.map((c) => (
-                          <Link to={`/single/${c.id}`} onClick={handleReset}>
-                              <p className="crepe-item">{c.name}</p>
+                          <Link to={`/single/${c.id}`} onClick={handleReset} className="crepe-item">
+                              <p>{c.name}</p>
                           </Link>
                       ))
                     : ""}
             </div>
-        </header>
+        </>
     );
 };
 
