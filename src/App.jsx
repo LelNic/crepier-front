@@ -19,17 +19,15 @@ import Cart from "./pages/Cart/Cart";
 
 const App = () => {
   const [cartQuantity, setCartQuantity] = useState(0);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [user, setUser] = useState({});
-    const [cart, setCart] = useState([]);
-
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState({});
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
-       const cart = JSON.parse(localStorage.getItem("cart"));
-       const qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
-      setCart(qty);
-     }, []);
-
+    const cart = JSON.parse(localStorage.getItem("cart"));
+    const qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
+    setCart(qty);
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
